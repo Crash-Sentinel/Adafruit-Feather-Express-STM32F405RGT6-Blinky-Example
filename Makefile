@@ -211,4 +211,11 @@ clean:
 flash: $(BUILD_DIR)/$(TARGET).elf
 	openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c "program $< verify exit reset"
 
+#####
+# help menu
+#####
+
+help:
+	@sed 's/^#//' comments.mk
+
 # *** EOF ***
